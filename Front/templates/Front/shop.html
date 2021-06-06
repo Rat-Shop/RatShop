@@ -1,0 +1,132 @@
+{% extends 'Front/templates/root.html' %}
+    {% block header %}
+    <div class="container mt-5 pb-5">
+        <div class="row">
+            <div class="col-4">
+                {% load static %}
+                <img src="{% static 'Front/img/Logo mk2.png' %}" class="img-fluid" alt="Logo" data-aos="fade-right">
+            </div>
+            <div class="col-8 text-center text-white">
+                <h2 class="mainText" data-aos="fade-up"><span class="text-danger">Survi</span>val</h2>
+                <p class="text-muted subText" data-aos="fade-up">Sklep trybu</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+{% block content %}
+<!-- Sklep -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mb-4">
+            <p class="text-white" data-aos="fade-down">Filtry</p>
+            <form method="get" data-aos="fade-down">
+                <label>
+                    <select class="form-select-sm bg-dark text-white border-danger rounded-6" name="kategoria">
+                        <option selected disabled>Kategoria</option>
+                        <option value="1">Rangi</option>
+                        <option value="2">Przedmioty</option>
+                    </select>
+                </label>
+                <label>
+                    <select class="form-select-sm bg-dark text-white border-danger rounded-6 ms-2" name="cena">
+                        <option selected disabled>Cena od:</option>
+                        <option value="1">Najniższej</option>
+                        <option value="2">Najwyższej</option>
+                    </select>
+                </label>
+                <button type="submit" class="btn btn-danger btn-sm rounded-6 ms-3">Filtruj</button>
+            </form>
+            <hr>
+            <div class="row p-3">
+                <!-- Przedmiot -->
+                <div class="col-lg-4 text-white mb-4" data-aos="fade-right">
+                    <div class="card bg-dark rounded-6 border border-4 border-danger item">
+                        <span class="sale-badge badge bg-success">Przecena</span>
+                        <img
+                                {% load static %}
+                                src="{% static 'Front/img/Vip.png' %}"
+                                class="card-img-top img-fluid"
+                                alt="Survival"
+                        />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ranga VIP</h5>
+                            <small class="text-muted">Rangi</small>
+                            <hr>
+                            <p><span class="text-muted pe-2"><s>13.99</s></span><span class="text-danger font-weight-bold">12.99 PLN</span></p>
+                            <p class="card-text">
+                                Jakiś krótki opis rangi w sumie czy coś
+                            </p>
+                            <a href="produkt.html" class="btn btn-danger">Zakup</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Przedmiot-->
+                <!-- Przedmiot -->
+                <div class="col-lg-4 text-white mb-4" data-aos="fade-right">
+                    <div class="card bg-dark rounded-6 border border-4 border-danger item">
+                        <img
+                                {% load static %}
+                                src="{% static 'Front/img/Vip.png' %}"
+                                class="card-img-top img-fluid"
+                                alt="Survival"
+                        />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ranga SVIP</h5>
+                            <small class="text-muted">Rangi</small>
+                            <hr>
+                            <p><span class="text-white font-weight-bold">13.99 PLN</span></p>
+                            <p class="card-text">
+                                Jakiś krótki opis rangi w sumie czy coś
+                            </p>
+                            <a href="produkt.html" class="btn btn-danger">Zakup</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Przedmiot-->
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-4">
+
+            <div class="mb-4 card bg-dark rounded-6 border border-4 border-danger" data-aos="fade-right">
+                <div class="card-body text-white text-center">
+                    <h4 class="text-uppercase card-title">Cel miesiąca</h4>
+                    <div class="progress m-2" style="height: 20px;">
+                        <div
+                                class="progress-bar bg-danger"
+                                role="progressbar"
+                                style="width: 25%;"
+                                aria-valuenow="25"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                        >
+                            25%
+                        </div>
+                    </div>
+                    <small class="text-muted text-uppercase">Utrzymanie serwera</small>
+                    <p>25 / 100 PLN </p>
+                </div>
+            </div>
+
+            <div class="mb-4 card bg-dark rounded-6 border border-4 border-danger" data-aos="fade-right">
+                <div class="card-body text-white">
+                    <h4 class="text-uppercase card-title text-center">Ostatnie zakupy</h4>
+                    <div class="row">
+                        <div class="col-xl-3">
+                            {% load static %}
+                            <img class="img-fluid avatar" src="{% static 'Front/img/Logo mk2.png' %}" alt="Avatar">
+                        </div>
+                        <div class="col">
+                            <h5 class="text-start">Szczurowsky</h5>
+                            <small class="text-muted">Ranga VIP</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Sidebar -->
+    </div>
+</div>
+<!-- /Sklep -->
+{% endblock %}

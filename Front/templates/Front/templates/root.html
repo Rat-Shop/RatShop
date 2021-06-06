@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="robots" content="noodp">
+
+        <!-- SEO -->
+        <meta name="description" content="Opis">
+        <meta name="keywords" content="KeyWordy">
+
+        <meta property="og:title" content="Tytuł">
+        <meta property="og:type" content="application/http">
+        <meta property="og:description" content="Opis">
+        <meta property="og:image" content="Logo">
+        <meta property="og:url" content="Logo">
+
+        <meta name="twitter:title" content="Tytuł">
+        <meta property="twitter:description" content="Tytuł">
+        <meta name="twitter:image" content="">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image:alt" content="Logo">
+
+        <!-- /SEO -->
+
+        <title>Sklep &#9679 RatShop</title>
+
+        <!-- Favicon -->
+        <!-- Do wygenerowania na https://www.favicon-generator.org/ -->
+        {% load static %}
+        <link rel="apple-touch-icon" sizes="57x57" href="{% static 'Front/img/favicons/apple-icon-57x57.png' %}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{% static 'Front/img/favicons/apple-icon-60x60.png'%}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'Front/img/favicons/apple-icon-72x72.png'%}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'Front/img/favicons/apple-icon-76x76.png'%}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'Front/img/favicons/apple-icon-114x114.png'%}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'Front/img/favicons/apple-icon-120x120.png'%}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static 'Front/img/favicons/apple-icon-144x144.png'%}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'Front/img/favicons/apple-icon-152x152.png'%}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'Front/img/favicons/apple-icon-180x180.png'%}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'Front/img/favicons/android-icon-192x192.png'%}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'Front/img/favicons/favicon-32x32.png'%}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static 'Front/img/favicons/favicon-96x96.png'%}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'Front/img/favicons/favicon-16x16.png'%}">
+        <link rel="manifest" href="{% static 'Front/img/favicons/manifest.json'%}">
+        <!-- /Favicon  -->
+
+        {% load static %}
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static 'Front/css/mdb.min.css' %}">
+        <link rel="stylesheet" href="{% static 'Front/css/styles.css' %}">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!--/CSS-->
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <!-- /Fonts-->
+    </head>
+    <body>
+        <!-- Preloader -->
+        <div class="preloader-box">
+            <div class="preloader">
+                <div class="preloader-ring"> RatMC</div>
+                <div class="preloader-ring"> ItemShop</div>
+            </div>
+        </div>
+        <!-- /Preloader -->
+        <header id="header-main" data-aos="fade-up">
+            {% include 'Front/templates/navbar.html' %}
+            {% block header %}
+            
+            {% endblock %}
+        </header>
+        {% block content %}
+        {% endblock %}
+        {% include "Front/templates/footer.html" %}
+        {% load static %}
+        <script src="{% static "Front/js/mdb.min.js" %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="{% static "Front/js/core.js" %}"></script>
+    </body>
+</html>
