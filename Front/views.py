@@ -2,14 +2,3 @@ from django.shortcuts import render
 
 
 # Create your views here.
-
-def home_view(request):
-    return render(request, 'Front/index.html', {})
-
-
-def shop_view(request):
-    return render(request, 'Front/shop.html', {})
-
-
-def product_view(request):
-    return render(request, 'Front/produkt.html', {})
