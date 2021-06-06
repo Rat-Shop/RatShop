@@ -2,3 +2,4 @@ venv
 .idea
 Front/migrations/*
 db.sqlite3
+static
