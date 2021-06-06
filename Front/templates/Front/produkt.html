@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="robots" content="noodp">
+
+    <!-- SEO -->
+    <meta name="description" content="Opis">
+    <meta name="keywords" content="KeyWordy">
+
+    <meta property="og:title" content="Tytuł">
+    <meta property="og:type" content="application/http">
+    <meta property="og:description" content="Opis">
+    <meta property="og:image" content="Logo">
+    <meta property="og:url" content="Logo">
+
+    <meta name="twitter:title" content="Tytuł">
+    <meta property="twitter:description" content="Tytuł">
+    <meta name="twitter:image" content="https://puzonkowamc.pl/static/home/img/Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="Logo">
+
+    <!-- /SEO -->
+
+    <title>Sklep &#9679 RatShop</title>
+
+    <!-- Favicon -->
+    <!-- Do wygenerowania na https://www.favicon-generator.org/ -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <!-- Bugs with internal WebStorm Server <link rel="manifest" href="assets/img/favicons/manifest.json">-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <!-- /Favicon  -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/mdb.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!--/CSS-->
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- /Fonts-->
+</head>
+<body>
+<!-- Preloader -->
+<div class="preloader-box">
+    <div class="preloader">
+        <div class="preloader-ring"> RatMC</div>
+        <div class="preloader-ring"> ItemShop</div>
+    </div>
+</div>
+<!-- /Preloader -->
+
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="zakup">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title">Zakup przedmiot</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <form method="post">
+                    <div class="form-group mb-2">
+                        <label for="Nick"></label>
+                        <input type="text" class="form-control-lg bg-dark text-white border-danger" id="Nick"
+                               placeholder="Nick" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email"></label>
+                        <input type="email" class="form-control-lg bg-dark text-white border-danger" id="email"
+                               placeholder="E-Mail" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="metoda" class="me-2">Metoda płatności</label>
+                        <select class="form-select-sm bg-dark text-white border-danger" name="metoda" id="metoda"
+                                required>
+                            <option value="Przelew">Przelew</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="SMS">PayPal</option>
+                        </select>
+                    </div>
+                    <hr>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cofnij</button>
+                        <button type="submit" class="btn btn-success">Zakup</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+
+<header id="header-main" data-aos="fade-up">
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-transparent navbar-expand-lg">
+        <div class="container-fluid">
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    data-aos="fade-down"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse p-3" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item" data-aos="fade-up">
+                        <a class="nav-link" href="index.html">Strona główna</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-up">
+                        <a class="nav-link" href="survival.html">Survival</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-up">
+                        <a class="nav-link" href="">Regulamin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- /Navbar -->
+    <div class="container mt-5 pb-5">
+        <div class="row">
+            <div class="col-4">
+                <img src="assets/img/Logo%20mk2.png" class="img-fluid" alt="Logo" data-aos="fade-right">
+            </div>
+            <div class="col-8 text-center text-white">
+                <h2 class="mainText" data-aos="fade-up"><span class="text-danger">Ranga</span> VIP</h2>
+                <p class="text-muted subText" data-aos="fade-up">Przegląd przedmiotu</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Sklep -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-7 mb-4 bg-dark rounded-6 border border-danger border-3 me-5">
+            <h1 class="text-white ps-4 pt-4">Ranga VIP</h1>
+            <hr>
+            <div class="row">
+                <div class="col-md-4 text-white p-3">
+                    <img alt="Ikona" src="assets/img/Vip.png" class="img-fluid mb-3">
+                    <h5>Cena usługi:</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-credit-card"></i> Przelew: <span class="font-weight-bold">20 PLN</span></li>
+                        <li><i class="fab fa-paypal"></i> PayPal: <span class="font-weight-bold">20 PLN</span></li>
+                        <li><i class="fas fa-sms"></i> SMS: <span class="font-weight-bold">32 PLN</span></li>
+                    </ul>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#zakup">Zakup</button>
+                </div>
+                <div class="col-md-8 text-white">
+                    <h2>Opis usługi:</h2>
+                    <ul>
+                        <li>Kij</li>
+                        <li>Wie</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-4">
+
+            <div class="mb-4 card bg-dark rounded-6 border border-4 border-danger" data-aos="fade-right">
+                <div class="card-body text-white text-center">
+                    <h4 class="text-uppercase card-title">Cel miesiąca</h4>
+                    <div class="progress m-2" style="height: 20px;">
+                        <div
+                                class="progress-bar bg-danger"
+                                role="progressbar"
+                                style="width: 25%;"
+                                aria-valuenow="25"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                        >
+                            25%
+                        </div>
+                    </div>
+                    <small class="text-muted text-uppercase">Utrzymanie serwera</small>
+                    <p>25 / 100 PLN </p>
+                </div>
+            </div>
+
+            <div class="mb-4 card bg-dark rounded-6 border border-4 border-danger" data-aos="fade-right">
+                <div class="card-body text-white">
+                    <h4 class="text-uppercase card-title text-center">Ostatnie zakupy</h4>
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <img class="img-fluid avatar" src="assets/img/Logo%20mk2.png" alt="Avatar">
+                        </div>
+                        <div class="col">
+                            <h5 class="text-start">Szczurowsky</h5>
+                            <small class="text-muted">Ranga VIP</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Sidebar -->
+    </div>
+</div>
+<!-- /Sklep -->
+
+<!--- Footer --->
+<footer class="bg-dark text-white text-center text-md-start mt-5 rounded-6" data-aos="fade-up">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0" data-aos="fade-up">
+                <img src="assets/img/Logo%20mk2.png" class="img-fluid logo" alt="Logo">
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0" data-aos="fade-up">
+                <h5 class="text-uppercase text-danger font-weight-bold">Informacje</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#" class="text-white">WWW</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">FanPage</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">Youtube</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">Instgram</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0" data-aos="fade-up">
+                <h5 class="text-uppercase text-danger font-weight-bold">Ważne</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#" class="text-white">Regulamin sklepu</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">Polityka prywatności</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">Polityka zwrotów</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">Reklamacje</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0" data-aos="fade-up">
+                <h5 class="text-uppercase mb-0 text-danger font-weight-bold">Menu</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#" class="text-white">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">Survival</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white">Regulamin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="text-center p-3 f2">
+        © 2021 Copyright: <a href="" class="text-danger font-weight-bold">RatShop</a><br>
+        Code and Design by: <a href="https://szczurowsky.pl" class="text-danger font-weight-bold">Szczurowsky</a>
+    </div>
+</footer>
+<!--- /Footer --->
+<script src="assets/js/mdb.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="assets/js/core.js"></script>
+</body>
+</html>
