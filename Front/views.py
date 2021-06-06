@@ -9,3 +9,7 @@ def home_view(request):
 
 def shop_view(request):
     return render(request, 'Front/shop.html', {})
+
+
+def product_view(request):
+    return render(request, 'Front/produkt.html', {})
