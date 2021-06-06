@@ -1,0 +1,194 @@
+/*
+    RatShop by Szczurowsky
+    Stylesheet
+    Table of contest
+    0. Imports
+    1. Scrollbar
+    2. Preloader
+    3. Header
+    4. Body
+    5. Navbar
+    6. Footer
+    7. Item
+*/
+
+/* --------------------------------------------------| Imports |----------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800&display=swap");
+/* -----------------------------------------------| Imports End |---------------------------------------------------- */
+
+/* -------------------------------------------------| Scrollbar |---------------------------------------------------- */
+*::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, .4)!important;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar
+{
+    width: 3px;
+    background-color: rgba(0, 0, 0, .4)!important;
+}
+
+*::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background: #e23535;
+
+}
+/* -----------------------------------------------| Scrollbar End |-------------------------------------------------- */
+
+/* -------------------------------------------------| Preloader |---------------------------------------------------- */
+.preloader-box{
+    background-color: #2b2828;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.preloader {
+    z-index: 1001;
+    display: flex;
+    animation: spin-1 6s linear infinite;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    color: #e23535;
+}
+.preloader,
+.preloader-ring {
+    transform-style: preserve-3d;
+}
+.preloader-ring {
+    animation: spin-2 3s linear infinite;
+    position: relative;
+    height: 60px;
+    width: 20px;
+}
+.preloader-ring:nth-child(even) {
+    animation-direction: reverse;
+}
+.preloader-sector {
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-transform: uppercase;
+    transform: translateZ(160px);
+}
+.preloader-sector,
+.preloader-sector:empty:before {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.preloader-sector:empty:before {
+    background: linear-gradient(transparent 50%, #f18f8f, transparent 65%);
+    content: "";
+}
+@keyframes spin-1 {
+    from {
+        transform: rotateY(0) rotateX(30deg);
+    }
+    to {
+        transform: rotateY(1turn) rotateX(30deg);
+    }
+}
+@keyframes spin-2 {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(1turn);
+    }
+}
+/* -----------------------------------------------| Preloader End |-------------------------------------------------- */
+
+/* ---------------------------------------------------| Header |----------------------------------------------------- */
+#header-main{
+    background: url('../img/tlo.png') no-repeat;
+    background-size: cover;
+}
+.mainText{
+    font-weight: 800!important;
+    text-transform: uppercase!important;
+    font-size: 8rem!important;
+    margin-top: 6.5rem;
+}
+.subText{
+    font-size: 2rem;
+}
+@media (max-width: 1360px) {
+    .mainText{
+        font-size: 4rem!important;
+        margin-top: 2rem;
+    }
+    .subText{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 700px) {
+    .mainText{
+        font-size: 2rem!important;
+        margin-top: 0;
+    }
+    .subText{
+        font-size: 1rem;
+    }
+}
+/* -------------------------------------------------| Header End |--------------------------------------------------- */
+
+/* --------------------------------------------------| Body |-------------------------------------------------------- */
+body{
+    background-color: #2f3031;
+    font-family: 'Poppins', sans-serif;
+}
+/* ------------------------------------------------| Body End |------------------------------------------------------ */
+
+/* --------------------------------------------------| Navbar |------------------------------------------------------ */
+.nav-item{
+    font-weight: 800!important;
+    font-size: 1.2rem;
+    text-transform: uppercase!important;
+}
+/* ------------------------------------------------| Navbar End |---------------------------------------------------- */
+
+/* --------------------------------------------------| Footer |------------------------------------------------------ */
+.f2{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.logo{
+    max-height: 15vh!important;
+}
+/* ------------------------------------------------| Footer End |---------------------------------------------------- */
+
+/* -------------------------------------------------| Sidebar |------------------------------------------------------ */
+@media (max-width: 1200px)  {
+    .avatar{
+        visibility: hidden;
+        display: none;
+    }
+}
+/* ------------------------------------------------| Sidebar End |--------------------------------------------------- */
+
+/* ---------------------------------------------------| Item |------------------------------------------------------- */
+.item {
+    position:relative;
+    padding-top:20px;
+    display:inline-block;
+}
+.sale-badge{
+    position: absolute;
+    right: -20px;
+    top:10px;
+}
+/* ------------------------------------------------| Item End |------------------------------------------------------ */
