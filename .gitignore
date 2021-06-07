@@ -3,4 +3,5 @@ venv
 Front/migrations/*
 db.sqlite3
 /static
-Categories/migrations/*
+categories/migrations/*
+shop/migrations*
