@@ -39,51 +39,32 @@
             </form>
             <hr>
             <div class="row p-3">
+                {% for item in items %}
                 <!-- Przedmiot -->
                 <div class="col-lg-4 text-white mb-4" data-aos="fade-right">
                     <div class="card bg-dark rounded-6 border border-4 border-danger item">
                         <span class="sale-badge badge bg-success">Przecena</span>
                         <img
-                                {% load static %}
-                                src="{% static 'Front/img/Vip.png' %}"
+
+                                src="{{ item.image }}"
                                 class="card-img-top img-fluid"
                                 alt="Survival"
                         />
                         <div class="card-body text-center">
-                            <h5 class="card-title">Ranga VIP</h5>
-                            <small class="text-muted">Rangi</small>
+                            <h5 class="card-title">{{ item.name}}</h5>
+                            <small class="text-muted">Popiłem</small>
                             <hr>
-                            <p><span class="text-muted pe-2"><s>13.99</s></span><span class="text-danger font-weight-bold">12.99 PLN</span></p>
+                            <p><span class="text-muted pe-2"><s>13.99</s></span><span class="text-danger font-weight-bold">Za darmo oddam</span></p>
                             <p class="card-text">
-                                Jakiś krótki opis rangi w sumie czy coś
+                                {{ item.description }}
                             </p>
                             <a href="produkt.html" class="btn btn-danger">Zakup</a>
                         </div>
                     </div>
                 </div>
                 <!-- /Przedmiot-->
-                <!-- Przedmiot -->
-                <div class="col-lg-4 text-white mb-4" data-aos="fade-right">
-                    <div class="card bg-dark rounded-6 border border-4 border-danger item">
-                        <img
-                                {% load static %}
-                                src="{% static 'Front/img/Vip.png' %}"
-                                class="card-img-top img-fluid"
-                                alt="Survival"
-                        />
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Ranga SVIP</h5>
-                            <small class="text-muted">Rangi</small>
-                            <hr>
-                            <p><span class="text-white font-weight-bold">13.99 PLN</span></p>
-                            <p class="card-text">
-                                Jakiś krótki opis rangi w sumie czy coś
-                            </p>
-                            <a href="produkt.html" class="btn btn-danger">Zakup</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Przedmiot-->
+                {% endfor %}
+                
             </div>
         </div>
         {% include 'Front/templates/sidebar.html' %}
