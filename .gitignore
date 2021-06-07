@@ -4,4 +4,4 @@ Front/migrations/*
 db.sqlite3
 /static
 categories/migrations/*
-shop/migrations*
+shop/migrations/*
