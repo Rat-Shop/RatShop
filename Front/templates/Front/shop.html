@@ -41,13 +41,15 @@
             <div class="row p-3">
                 {% for item in items %}
                 <!-- Przedmiot -->
-                <div class="col-lg-4 text-white mb-4" data-aos="fade-right">
+                <div class="col-lg-4 text-white mb-4 d-flex py-2" data-aos="fade-right">
                     <div class="card bg-dark rounded-6 border border-4 border-danger item">
+                        {% if item.sale %}
                         <span class="sale-badge badge bg-success">Przecena</span>
+                        {% endif %}
                         <img
 
                                 src="{{ item.image }}"
-                                class="card-img-top img-fluid"
+                                class="card-img-top img-fluid shopImg"
                                 alt="Survival"
                         />
                         <div class="card-body text-center">
@@ -58,7 +60,9 @@
                             <p class="card-text">
                                 {{ item.description }}
                             </p>
-                            <a href="produkt.html" class="btn btn-danger">Zakup</a>
+                            <div>
+                                <a href="produkt.html" class="btn btn-danger">Zakup</a>
+                            </div>
                         </div>
                     </div>
                 </div>
