@@ -7,7 +7,7 @@
                 <img src="{% static 'Front/img/Logo mk2.png' %}" class="img-fluid" alt="Logo" data-aos="fade-right">
             </div>
             <div class="col-8 text-center text-white">
-                <h2 class="mainText" data-aos="fade-up"><span class="text-danger">Ranga</span> VIP</h2>
+                <h2 class="mainText" data-aos="fade-up">{{ item.name }}</h2>
                 <p class="text-muted subText" data-aos="fade-up">Przegląd przedmiotu</p>
             </div>
         </div>
@@ -60,15 +60,14 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-7 mb-4 bg-dark rounded-6 border border-danger border-3 me-5">
-            <h1 class="text-white ps-4 pt-4">Ranga VIP</h1>
+            <h1 class="text-white ps-4 pt-4">{{ item.name }}</h1>
             <hr>
             <div class="row">
                 <div class="col-md-4 text-white p-3">
-                    {% load static %}
-                    <img alt="Ikona" src="{% static 'Front/img/Vip.png' %}" class="img-fluid mb-3">
+                    <img alt="Ikona" src="{{ item.image }}" class="img-fluid mb-3">
                     <h5>Cena usługi:</h5>
                     <ul class="list-unstyled">
-                        <li><i class="fas fa-credit-card"></i> Przelew: <span class="font-weight-bold">20 PLN</span></li>
+                        <li><i class="fas fa-credit-card"></i> Przelew: <span class="font-weight-bold">{{ price }} </span></li>
                         <li><i class="fab fa-paypal"></i> PayPal: <span class="font-weight-bold">20 PLN</span></li>
                         <li><i class="fas fa-sms"></i> SMS: <span class="font-weight-bold">32 PLN</span></li>
                     </ul>
@@ -76,10 +75,7 @@
                 </div>
                 <div class="col-md-8 text-white">
                     <h2>Opis usługi:</h2>
-                    <ul>
-                        <li>Kij</li>
-                        <li>Wie</li>
-                    </ul>
+                    {{ item.description }}
                 </div>
             </div>
         </div>

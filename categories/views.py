@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.conf import settings
 from .models import ShopCategory
-from shop.models import Item
+from item.models import Item
 
 
 # Create your views here.

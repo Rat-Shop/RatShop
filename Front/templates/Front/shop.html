@@ -56,12 +56,27 @@
                             <h5 class="card-title">{{ item.name}}</h5>
                             <small class="text-muted">Popiłem</small>
                             <hr>
-                            <p><span class="text-muted pe-2"><s>13.99</s></span><span class="text-danger font-weight-bold">Za darmo oddam</span></p>
+                            {% if item.sale %}
+                                <p><span class="text-muted pe-2"><s>                                {% if item.price is Null %}
+                                    Darmowe
+                                    {% else %}
+                                    {{ item.price }}
+                                {% endif %} </s></span><span class="text-danger font-weight-bold">{% if item.sale_price is None %}
+                                        Darmowe{% else %}
+                                    {{ item.sale_price }} PLN
+                                {% endif %} </span></p>
+                                {% else %}
+                                <p><span class="text-white font-weight-bold">                                {% if item.price is Null %}
+                                    Darmowe
+                                    {% else %}
+                                    {{ item.price }} PLN
+                                {% endif %}</span></p>
+                            {% endif %}
                             <p class="card-text">
                                 {{ item.description }}
                             </p>
                             <div>
-                                <a href="produkt.html" class="btn btn-danger">Zakup</a>
+                                <a href="/przedmiot/{{ item.id }}" class="btn btn-danger">Zakup</a>
                             </div>
                         </div>
                     </div>
