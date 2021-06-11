@@ -4,5 +4,6 @@ Front/migrations/*
 db.sqlite3
 /static
 categories/migrations/*
-shop/migrations/*
 item/migrations/*
+!categories/migrations/__init__.py
+!item/migrations/__init__.py
