@@ -8,7 +8,7 @@ class GenerateCategoryTest(TestCase):
         response = self.client.get('/przedmiot/1/')
         self.assertEqual(response.status_code, 404)
         ShopCategory.objects.create(name='Test', description='Test', image='')
-        response = self.client.get('/Test/')
+        response = self.client.get('/sklep/Test/')
         self.assertEqual(response.status_code, 200)
         shop = ShopCategory.objects.filter(name='Test').first()
         Item.objects.create(name='Test', description='Test', shop=shop, )
