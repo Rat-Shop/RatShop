@@ -15,7 +15,7 @@ class HotPayPayment(models.Model):
     HotPay = models.ForeignKey(HotPay, on_delete=models.CASCADE)
     price = models.FloatField(blank=True, default=0.00, null=True)
     order_id = models.IntegerField()
-    payment_id = models.CharField(max_length=255)
+    payment_id = models.CharField(max_length=255, blank=True, null=True)
     status = models.IntegerField(default=2)
 
     def __str__(self):
