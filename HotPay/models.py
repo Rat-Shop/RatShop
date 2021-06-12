@@ -19,4 +19,4 @@ class HotPayPayment(models.Model):
     status = models.IntegerField(default=2)
 
     def __str__(self):
-        return 'ID płatności: ' + str(self.payment_id)
+        return str(self.pk) + '. ID płatności: ' + str(self.payment_id)
