@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Name of shop
 SHOP_NAME = 'RatShop'
+SHOP_IP = 'http://strona1.szczurowsky.pl/'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

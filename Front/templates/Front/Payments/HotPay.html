@@ -1,0 +1,39 @@
+{% extends 'Front/templates/root.html' %}
+        {% block header %}
+            <div class="container mt-5 pb-5">
+                <div class="row">
+                    <div class="col-4">
+                        {% load static %}
+                        <img src="{% static 'Front/img/Logo mk2.png' %}" class="img-fluid" alt="Logo" data-aos="fade-right">
+                    </div>
+                    <div class="col-8 text-center text-white">
+                        <h2 class="mainText" data-aos="fade-up">{{ shopName }}</h2>
+                        <p class="text-muted subText" data-aos="fade-up">Płatność</p>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+        {% block content %}
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-8 mb-4">
+                    <div class="row p-3">
+                        <h1 class="text-white">Jeśli nie zostaniesz automatycznie przekierowany to</h1>
+                        <form id="order" action="https://platnosc.hotpay.pl/" method="post">
+                        <input required name="SEKRET" value="{{ secret }}" type="hidden">
+                        <input required name="KWOTA" value="{{ price }}" type="hidden">
+                        <input required name="NAZWA_USLUGI" value="{{ name }}" type="hidden">
+                        <input required name="ADRES_WWW" value="{{ www }}" type="hidden">
+                        <input required name="ID_ZAMOWIENIA" value="{{ id }}" type="hidden">
+                        <input name="EMAIL" value="{{ email }}" type="hidden">
+                        <input name="DANE_OSOBOWE" value="" type="hidden">
+                        <button type="submit" class="btn btn-danger">Kliknij mnie</button>
+                        </form>
+
+                    </div>
+                </div>
+                {% include 'Front/templates/sidebar.html' %}
+            </div>
+        </div>
+        {% endblock %}
