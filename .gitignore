@@ -3,4 +3,4 @@ venv
 Front/migrations/*
 db.sqlite3
 /static
-RatShop/app.env
+RatShop/.env
