@@ -26,3 +26,40 @@ def generate_item(request, item_id):
         'price': price,
     }
     return render(request, 'Front/produkt.html', context)
+
+
+# Payment processor
+
+def process_payment(request):
+    if request.method == "POST":
+        if request.POST.get('nick'):
+            nick = request.POST['nick']
+        else:
+            return render(request, 'Front/templates/404.html', status=404)
+        if request.POST.get('email'):
+            email = request.POST['email']
+        else:
+            return render(request, 'Front/templates/404.html', status=404)
+        if request.POST.get('itemID'):
+            item_id = request.POST['itemID']
+            found_item = Item.objects.filter(id=item_id).first()
+            if found_item.sale:
+                price = found_item.sale_price
+            else:
+                price = found_item.price
+        else:
+            return render(request, 'Front/templates/404.html', status=404)
+        if request.POST["metoda"] == "Przelew":
+            context = {
+                'price': price,
+                'ID': item_id,
+                'email': email,
+                'nickname': nick,
+            }
+            return render(request, "Front/Payments/Przelew_redirect.html", context)
+        elif request.POST["metoda"] == "":
+            pass
+        else:
+            return render(request, 'Front/templates/404.html', status=404)
+    else:
+        return render(request, 'Front/templates/404.html', status=404)

@@ -20,14 +20,12 @@
                 <div class="col-md-8 mb-4">
                     <div class="row p-3" data-aos="fade-in">
                         <h1 class="text-white">Jeśli nie zostaniesz automatycznie przekierowany to</h1>
-                        <form id="order" action="https://platnosc.hotpay.pl/" method="post">
-                        <input required name="SEKRET" value="{{ secret }}" type="hidden">
-                        <input required name="KWOTA" value="{{ price }}" type="hidden">
-                        <input required name="NAZWA_USLUGI" value="{{ name }}" type="hidden">
-                        <input required name="ADRES_WWW" value="{{ www }}" type="hidden">
-                        <input required name="ID_ZAMOWIENIA" value="{{ id }}" type="hidden">
-                        <input name="EMAIL" value="{{ email }}" type="hidden">
-                        <input name="DANE_OSOBOWE" value="" type="hidden">
+                        <form id="order" action="/HotPay/platnosc/" method="post">
+                            {% csrf_token %}
+                        <input required name="price" value="{{ price }}" type="hidden">
+                        <input required name="ID" value="{{ ID }}" type="hidden">
+                        <input required name="email" value="{{ email }}" type="hidden">
+                        <input required name="nickname" value="{{ nickname }}" type="hidden">
                         <button type="submit" class="btn btn-danger">Kliknij mnie</button>
                         </form>
 

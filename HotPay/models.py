@@ -12,7 +12,9 @@ class HotPay(models.Model):
 
 
 class HotPayPayment(models.Model):
-    HotPay = models.ForeignKey(HotPay, on_delete=models.CASCADE)
+    nickname = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    HotPay = models.ForeignKey(HotPay, on_delete=models.PROTECT)
     price = models.FloatField(blank=True, default=0.00, null=True)
     order_id = models.IntegerField()
     payment_id = models.CharField(max_length=255, blank=True, null=True)
