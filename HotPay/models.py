@@ -5,7 +5,6 @@ from django.db import models
 class HotPay(models.Model):
     secret = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
-    hash = models.CharField(max_length=255, default="sha256")
 
     def __str__(self):
         return "Usługa HotPay"
@@ -16,7 +15,7 @@ class HotPayPayment(models.Model):
     email = models.CharField(max_length=255)
     HotPay = models.ForeignKey(HotPay, on_delete=models.PROTECT)
     price = models.FloatField(blank=True, default=0.00, null=True)
-    order_id = models.IntegerField()
+    item_id = models.IntegerField()
     payment_id = models.CharField(max_length=255, blank=True, null=True)
     status = models.IntegerField(default=2)
 

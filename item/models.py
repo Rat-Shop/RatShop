@@ -11,6 +11,7 @@ class Item(models.Model):
     sale = models.BooleanField(default=False)
     sale_price = models.FloatField(blank=True, null=True)
     price = models.FloatField(blank=True, default=0.00, null=True)
+    command = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name

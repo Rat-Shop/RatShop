@@ -8,32 +8,35 @@
                                 <div
                                         class="progress-bar bg-danger"
                                         role="progressbar"
-                                        style="width: 25%;"
-                                        aria-valuenow="25"
+                                        style="width: {{ sidebarSum }}%;"
+                                        aria-valuenow="{{ sidebarSum }}"
                                         aria-valuemin="0"
                                         aria-valuemax="100"
                                 >
-                                    25%
                                 </div>
                             </div>
                             <small class="text-muted text-uppercase">Utrzymanie serwera</small>
-                            <p>25 / 100 PLN </p>
+                            <p>{{ sidebarSum }} / 100 PLN </p>
                         </div>
                     </div>
 
                     <div class="mb-4 card bg-dark rounded-6 border border-4 border-danger" data-aos="fade-right">
                         <div class="card-body text-white">
                             <h4 class="text-uppercase card-title text-center">Ostatnie zakupy</h4>
-                            <div class="row">
+                            {% for customer in sidebarData %}
+                                <div class="row">
                                 <div class="col-xl-3">
-                                    {% load static %}
-                                    <img class="img-fluid avatar" src="{% static 'Front/img/Logo mk2.png' %}" alt="Avatar">
+                                    <img class="img-fluid avatar"
+                                         src="https://mc-heads.net/head/{{ customer.nickname }}"
+                                         alt="Avatar"
+                                    >
                                 </div>
                                 <div class="col">
-                                    <h5 class="text-start">Szczurowsky</h5>
-                                    <small class="text-muted">Ranga VIP</small>
+                                    <h5 class="text-start">{{ customer.nickname }}</h5>
+                                    <small class="text-muted">{{ customer.order_name }}</small>
                                 </div>
                             </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Item
 from django.conf import settings
-
+from Front.sidebar import sidebar_data
+from Front.sidebar import sidebar_data
 
 # Create your views here.
 def generate_item(request, item_id):
@@ -20,7 +21,10 @@ def generate_item(request, item_id):
             price = str(found_item.price) + ' PLN'
         else:
             price = "Darmowe"
+    s_d = sidebar_data()
     context = {
+        'sidebarSum': s_d[0],
+        'sidebarData': s_d[1],
         'shopName': settings.SHOP_NAME,
         'item': found_item,
         'price': price,
@@ -50,7 +54,10 @@ def process_payment(request):
         else:
             return render(request, 'Front/templates/404.html', status=404)
         if request.POST["metoda"] == "Przelew":
+            s_d = sidebar_data()
             context = {
+                'sidebarSum': s_d[0],
+                'sidebarData': s_d[1],
                 'price': price,
                 'ID': item_id,
                 'email': email,
