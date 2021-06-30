@@ -6,7 +6,7 @@ from django.conf import settings
 from .models import HotPay, HotPayPayment
 from item.models import Item
 from django.views.decorators.csrf import csrf_exempt
-from .rcon import send_command
+from ServerConnection.ExecuteCommand import execute_command
 
 # Create your views here.
 def payment_redirect(request):
@@ -25,7 +25,6 @@ def payment_redirect(request):
             return render(request, 'Front/templates/404.html', status=404)
         if request.POST.get('ID'):
             name = Item.objects.filter(id=request.POST['ID']).first()
-            name = name.name
         else:
             return render(request, 'Front/templates/404.html', status=404)
         if request.POST.get('email'):
@@ -33,7 +32,7 @@ def payment_redirect(request):
         else:
             return render(request, 'Front/templates/404.html', status=404)
         obj = HotPayPayment.objects.create(HotPay=HotPay.objects.first(), price=price, item_id=request.POST['ID'],
-                                           nickname=nickname, email=email, order_name=name)
+                                           nickname=nickname, email=email)
         if price == 0:
             return render(request, 'Front/templates/404.html', status=404)
         payment_id = HotPayPayment.objects.filter(id=obj.pk).first()
@@ -69,11 +68,11 @@ def returned(request):
                 order_id = request.POST["ID_ZAMOWIENIA"]
                 payment_id = request.POST["ID_PLATNOSCI"]
                 HotPayPayment.objects.filter(pk=order_id).update(status=1, payment_id=payment_id)
-                item = Item.objects.filter(pk=order_id).first()
+                item = Item.objects.filter(pk=HotPayPayment.objects.filter(pk=order_id).first().item_id).first()
                 command = item.command.replace("{name}", HotPayPayment.objects.filter(pk=order_id).first().nickname)
-                rcon = send_command(command)
-                if rcon:
-                    HotPayPayment.objects.filter(pk=order_id).update(status=0, payment_id=payment_id)
+                rcon_result = execute_command(command)
+                if rcon_result:
+                    HotPayPayment.objects.filter(pk=order_id).update(status=0)
                 return HttpResponse(status=200)
             return HttpResponse(status=200)
     return HttpResponse(status=203)

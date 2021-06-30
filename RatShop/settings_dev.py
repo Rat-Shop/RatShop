@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'categories',
     'item',
     'HotPay',
+    'ServerConnection',
 ]
 
 MIDDLEWARE = [
