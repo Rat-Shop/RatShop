@@ -1,12 +1,12 @@
 from mctools import RCONClient
 
-HOST = "mc.szczurowsky.pl"
-PORT = 25575
+HOST = ""
+PORT =
 
 rcon = RCONClient(HOST, port=PORT)
 
 
 def send_command(command):
-    if rcon.login("123"):
+    if rcon.login(""):
         resp = rcon.command(command)
         return True
