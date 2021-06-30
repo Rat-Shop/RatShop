@@ -16,6 +16,7 @@ class HotPayPayment(models.Model):
     HotPay = models.ForeignKey(HotPay, on_delete=models.PROTECT)
     price = models.FloatField(blank=True, default=0.00, null=True)
     item_id = models.IntegerField()
+    item_name = models.CharField(max_length=255)
     payment_id = models.CharField(max_length=255, blank=True, null=True)
     status = models.IntegerField(default=2)
 

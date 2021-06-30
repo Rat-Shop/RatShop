@@ -32,7 +32,7 @@ def payment_redirect(request):
         else:
             return render(request, 'Front/templates/404.html', status=404)
         obj = HotPayPayment.objects.create(HotPay=HotPay.objects.first(), price=price, item_id=request.POST['ID'],
-                                           nickname=nickname, email=email)
+                                           nickname=nickname, email=email, item_name=name)
         if price == 0:
             return render(request, 'Front/templates/404.html', status=404)
         payment_id = HotPayPayment.objects.filter(id=obj.pk).first()
