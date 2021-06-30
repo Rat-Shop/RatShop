@@ -1,6 +1,5 @@
 from .models import ServerConnection
 from mctools import RCONClient
-import logging
 
 
 def execute_command(command):
@@ -9,8 +8,7 @@ def execute_command(command):
         rcon = RCONClient(se.rcon_host, port=se.rcon_port)
         try:
             rcon.login(se.rcon_password)
-        except Exception as e:
-            logging.exception(e)
+        except Exception:
             return False
         if rcon.is_authenticated():
             rcon.command(command)

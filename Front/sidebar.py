@@ -1,8 +1,8 @@
-from HotPay.models import HotPayPayment
+from item.models import Payment
 
 
 def sidebar_data():
-    last_payments = HotPayPayment.objects.order_by('-pk').all()
+    last_payments = Payment.objects.order_by('-pk').all()
     i = 0
     last_five = []
     for payment in last_payments:

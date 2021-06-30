@@ -42,8 +42,8 @@
                         <select class="form-select-sm bg-dark text-white border-danger" name="metoda" id="metoda"
                                 required>
                             <option value="Przelew">Przelew</option>
-                            <option value="PayPal">PayPal</option>
-                            <option value="SMS">PayPal</option>
+                            <option value="PSC">PaySafeCard</option>
+                            <option value="SMS">SMS</option>
                         </select>
                     </div>
                     <input type="hidden" id="itemID" name="itemID" value="{{ item.id }}">
@@ -69,7 +69,7 @@
                     <h5>Cena usługi:</h5>
                     <ul class="list-unstyled">
                         <li><i class="fas fa-credit-card"></i> Przelew: <span class="font-weight-bold">{{ price }} </span></li>
-                        <li><i class="fab fa-paypal"></i> PayPal: <span class="font-weight-bold">20 PLN</span></li>
+                        <li><i class="fas fa-scroll"></i> PaySafeCard: <span class="font-weight-bold">{{ price_psc }} </span></li>
                         <li><i class="fas fa-sms"></i> SMS: <span class="font-weight-bold">32 PLN</span></li>
                     </ul>
                     <button class="btn btn-danger" data-toggle="modal" data-target="#zakup">Zakup</button>
